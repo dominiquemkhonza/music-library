@@ -31,8 +31,15 @@ const library = {
 // p01: Coding Music - 2 tracks
 // p02: Other Playlist - 1 tracks
 const printPlaylists = function() {
-
-}
+       for (key in library.playlists) {
+         let playlistNum = key;
+         let name = library.playlists[key].name;
+         let numberOfSongs = library.playlists[key].tracks.length;
+         console.log(`${playlistNum}: ${name} - ${numberOfSongs};`);
+       }
+     };
+     
+     printPlaylists();
 
 
 // prints a list of all tracks, using the following format:
@@ -82,7 +89,8 @@ const addPlaylist = function(name) {
 // given a query string string, prints a list of tracks
 // where the name, artist or album contains the query string (case insensitive)
 // tip: use "string".search("tri") 
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/search
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/search 
+/*
 const printSearchResults = function(query) {
 
-}
+}  */
