@@ -97,15 +97,40 @@ const generateUid = function() {
 
 
 // adds a track to the library
-const addTrack = function(name, artist, album) {
-
+const generateUid = function() {
+  return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
 }
+
+const addTrack = function(name, artist, album) {
+  
+  let uniqueID = generateUid();
+  library.tracks[uniqueID] = {
+      id: uniqueID,
+      album: album,
+      artist: artist,
+      name: name
+  }
+  console.log(library.tracks);
+}
+
+addTrack("Hallelujah", "Jeff Buckley", "Grace");
 
 
 // adds a playlist to the library
 const addPlaylist = function(name) {
 
+  let uniqueID = generateUid();
+  library.playlists[uniqueID] = {
+      id: uniqueID,
+      name: name,
+      tracks: []
+  }
+
 }
+
+addPlaylist("Suffering Soundly");
+
+console.log(library.playlists);
 
 
 // STRETCH:
